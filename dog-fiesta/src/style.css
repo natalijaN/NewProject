@@ -1,0 +1,253 @@
+/* ------------------------- */
+/* BASIC SETUP*/
+/* ------------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #FFF;
+    color:#555;
+    font-family: 'Lato','Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px; 
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(/img/dog-background.jpg);   
+    background-size:cover;
+    background-position: center;
+    height:100vh;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------- */
+/* HEADER*/
+/* ------------------------- */
+
+.dog-text-box {
+    position:relative;
+    width:1140px;
+    top:70%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/* ---HEADINGS----*/
+
+h1, h2,h3 {   
+    font-weight: 300;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin-top:300px;
+    margin-bottom:20px;
+    color:#fff;
+    font-size:150%;
+    word-spacing: 3px;
+}
+
+h2 {
+    font-size: 140%;
+    word-spacing: 2px;
+    margin-top: 320px;
+}
+
+h3 {
+    text-transform: none; 
+    font-size:100%;
+    margin-bottom: 20px;
+    word-spacing: 2px;
+    text-align: center;
+}
+
+h2:after {
+    display: block;
+    height:2px;
+    background-color:#2ecc71;
+    content:" ";
+    width:600px;
+    margin:0 auto;
+    margin-top:30px;
+}
+
+footer > div > .col > h3:after {
+    display: block;
+    height:2px;
+    background-color:#2ecc71;
+    content:" ";
+    width:150px;
+    margin:0 auto;
+}
+
+/*---BUTTONS----*/
+
+.btn:link, 
+.btn:visited {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom:10px;
+    padding: 0px 30px;
+    font-weight: 300;
+    font-size:150%;
+    text-decoration: none;
+    background-color: #2ecc71;
+    color:#fff;
+    border-radius: 15px;
+    transition: background-color 0.5s;
+}
+
+.btn:hover,
+.btn:active{
+    background-color:#25a25a;
+}
+
+
+/* MAIN - NAVIGATION */
+
+.small-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.89);
+    box-shadow: 0 2px 2px rgb(235, 234, 234);
+    height: 60px;
+}
+.small-nav  .main-nav > li > a:link,
+.small-nav  .main-nav > li > a:visited {
+    padding: 18px 0;
+    color:#555; 
+}
+
+.small-nav.main-nav {   
+    margin-top:18px;
+}
+
+
+/* ------------------------- */
+/* MAIN SECTION*/
+/* ------------------------- */
+
+figure {
+    position: relative;
+    padding: 0;
+    margin-left:-80px;
+    overflow: hidden;
+}
+
+figure > img {
+    opacity: 0.9;
+    padding: 4px 10%;
+    height: 180px;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+figure > img:hover {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.section-link:visited,:active,:hover,:link {
+    text-decoration:none;
+    color: #555;
+}
+
+/* ------------------------- */
+/* FOOTER*/
+/* ------------------------- */
+
+.my-footer {
+    width:100% !important;
+    margin-top: 100px;
+}
+
+/* FORM */
+form {
+    padding: 10px;
+    margin-top: 100px;
+    position: relative;
+    width: 70%;
+  }
+  
+  form button, form h5 {
+    margin: 20px 0;
+  }
+
+  /* .project-list {
+    width:100%;
+     margin-top: 40px !important;
+  } */
+  
+
+  input[type=text]:not(.browser-default):focus:not([readonly]),
+  input[type=email]:not(.browser-default):focus:not([readonly]),
+  input[type=password]:not(.browser-default):focus:not([readonly]),
+  textarea.materialize-textarea:focus:not([readonly]){
+    border-color: #ec407a;
+    box-shadow: none;
+  }
+  
+  input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+  textarea.materialize-textarea:focus:not([readonly]) + label,
+  input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+    color: #ec407a !important;
+  }
+  
+  /* .main-text {
+      margin-top:30%!important;
+  } */
+  
+  body {
+    display: flex!important;
+    min-height: 100vh!important;
+    flex-direction: column!important;
+  }
+  
+  main {
+    flex: 1 0 auto!important;
+  }
+
+
+  .about-us {
+      margin-top: 200px;
+  }
+
+  .aboutUs-text {
+    font-size: 85%;
+  }
+
+  #aboutUs {
+    margin-top: 80px;
+  }
+  
+  .img-content {
+      width: 150px;
+      height: auto;
+  }
+
+  .my-btns {
+      border-radius: 5px;
+      height: 50px;
+      padding: 10px 50px;
+      font-size: 110%;
+      margin: 10px;
+  }
+
+  .project-summary {
+      top:50px;
+  }
+
+  .upload-image {
+      margin-top:-20px;
+  }
