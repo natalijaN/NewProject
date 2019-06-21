@@ -14,7 +14,7 @@ const BreedDetail = (props) => {
               <p>{breed.paragraph1}</p>
             </div>
             <div className="card-action grey lighten-4 grey-text">
-              <img src={breed.image}></img>
+              <img src={breed.image} width="400px" height="300px"></img>
               <div>{breed.paragraph2}</div>
             </div>
           </div>
