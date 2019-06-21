@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export class Footer extends Component {
     render() {
         return (
-            <footer className="footer fixed white-text grey darken-3 my-footer">
+            <footer className="footer white-text grey darken-3">
                     <div className="row">
-                        <div className="col m4 text-white">
+                        <div className="col m4 text-white center">
                             <h3>НАШИ ЦЕЛИ</h3>
                             <ul>
                                 <li>1. Развување на свеста и одговорноста кон животните за хумано постапување со нив
@@ -19,12 +19,12 @@ export class Footer extends Component {
                             <p style={{ 'whiteSpace': 'pre-wrap' }}></p> </li>
                             </ul>
                         </div>
-                        <div className="col m4">
+                        <div className="col m4 center">
                             <h3>КОНТАКТ</h3>
                             <p>Телефон: 02/123478</p>
                             <p>Е-пошта: info@dogfiesta.com</p>
                         </div>
-                        <div className="col m4">
+                        <div className="col m4 center">
                             <h3>АДРЕСА</h3>
                             <p>ул. Партизански одреди бр.123/23-Скопје</p>
                         </div>
@@ -32,7 +32,7 @@ export class Footer extends Component {
                     <div className='row'>
                         <div class="footer-copyright center">
                             <div class="container">
-                                <p>© 2014 Copyright Text</p>
+                                <p>© 2019 Copyright DogFiesta. Сите права се задржани</p>
                             </div>
                         </div>
                     </div>

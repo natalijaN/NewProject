@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import { FirstPage } from '../fromOldProject/FirstPage';
-import { SecondPage } from '../fromOldProject/SecondPage';
-import { Footer } from '../layout/Footer';
+import { FirstPage } from './FirstPage';
+import { SecondPage } from './SecondPage';
+import './styleDashboard.css'
 
 class Dashboard extends Component {
     render() {
         return (
-            <div className='dashboard container'>
-                <FirstPage />
-                <SecondPage />
+            <div className='container dashboard'>
+                <div className="first_page">
+                    <FirstPage />
+                </div>
+                <div id="second_page">
+                    <SecondPage />
+                </div>
             </div>
         )
     }

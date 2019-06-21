@@ -1,0 +1,22 @@
+body {
+    background-color: #cccccc;
+    background-image: linear-gradient(rgb(97, 96, 96),rgb(173, 173, 173), rgb(218, 216, 216));
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.project-details {
+    margin-top: 70px;
+}
+
+.project-list {
+    margin-top:60px;
+}
+
+.progress-label{
+    margin-right:10px;
+    font-size:100%;
+}

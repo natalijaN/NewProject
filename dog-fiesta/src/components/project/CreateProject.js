@@ -1,90 +1,72 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import firebase from "firebase";
+import FileUploader from "react-firebase-file-uploader";
 import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectAction'
-import { Redirect } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import { storage } from '../../config/fbConfig';
 
 class CreateProject extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: '',
-            content: '',
-            image: null,
-            url: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleChangeImage = this.handleChangeImage.bind(this);
-    }
+    state = {
+        title: "",
+        content: "",
+        isUploading: false,
+        image: "",
+        progress: 0,
+        url: ""
+    };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const { image } = this.state;
-        const uploadTask = storage.ref(`images/${image.name}`).put(image);
-        uploadTask.on('state_changed',
-            (snapshot) => {
-                // progrss function ....
-                // const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                // this.setState({ progress });
-            },
-            (error) => {
-                // error function ....
-                console.log(error);
-            },
-            () => {
-                // complete function ....
-                storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                    console.log(url);
-                    this.setState({ url: url });
-                })
-            });
-        
-        // this.props.createProject(this.state);
-        this.props.history.push('/');
-    }
+    handleChangeTitle = event => this.setState({ title: event.target.value });
+    handleChangeContent = event => this.setState({ content: event.target.value });
+    handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+    handleProgress = progress => this.setState({ progress });
+    handleUploadError = error => {
+        this.setState({ isUploading: false });
+        console.error(error);
+    };
+    handleUploadSuccess = (filename) => {
+        this.setState({ image: filename, progress: 100, isUploading: false });
+        firebase
+            .storage()
+            .ref("images")
+            .child(filename)
+            .getDownloadURL()
+            .then(url => this.setState({ url: url }))
+    };
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        })
-
-    }
-
-    handleChangeImage = (e) => {
-        if (e.target.files[0]) {
-            const image = e.target.files[0];
-            this.setState(() => ({ image }));
-        }
+    handleCreate = (e) => {
+        this.props.createProject(this.state)
     }
 
     render() {
-        const { auth } = this.props;
-        if (!auth.uid) return <Redirect to='/signin' />
         return (
-            <div className='container'>
-                <form className='white' onSubmit={this.handleSubmit}>
+            <div className='row'>
+            <div className="col m2"></div>
+                <form className='white center col m8 form-showing'>
                     <h5 className='grey-text text-darken-3'>Креирај Нов Оглас</h5>
                     <div className='input-field'>
                         <label htmlFor='title'>Наслов</label>
-                        <input type='text' id='title' onChange={this.handleChange} />
+                        <input type='text' value={this.state.title} id='title' onChange={this.handleChangeTitle} />
                     </div>
                     <div className='input-field'>
                         <label htmlFor='content'>Содржина на оглас</label>
-                        <textarea id='content' className='materialize-textarea' onChange={this.handleChange}></textarea>
+                        <textarea id='content' value={this.state.content} className='materialize-textarea' onChange={this.handleChangeContent}></textarea>
                     </div>
-                    {/* <button onClick={this.gotoUploadImage}>Прикачи фотографии</button> */}
-                    <div className='input-field'>
-                        <input type='file' id='image' onChange={this.handleChangeImage} />
-                        {/* <button onClick={this.handleUpload}>Прикачи</button> */}
-                    </div>
-
-                    <div className='input-field'>
-                        <button className='btn light-green z-depth-0'>Креирај</button>
-                    </div>
+                    <label className="progress-label">Прогрес:</label>
+                    {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
+                    {this.state.url && <img src={this.state.url} />}
+                    <FileUploader
+                        accept="image/*"
+                        name="image"
+                        randomizeFilename
+                        storageRef={firebase.storage().ref("images")}
+                        onUploadStart={this.handleUploadStart}
+                        onUploadError={this.handleUploadError}
+                        onUploadSuccess={this.handleUploadSuccess}
+                        onProgress={this.handleProgress}
+                    />
+                    <button className='btn light-green z-depth-0' onClick={this.handleCreate}>Креирај</button>
                 </form>
             </div>
-        )
+        );
     }
 }
 
@@ -99,5 +81,6 @@ const mapDispatchToProps = (dispatch) => {
         createProject: (project) => dispatch(createProject(project))
     }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateProject)

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 export class FirstPage extends Component {
     render() {
         return (

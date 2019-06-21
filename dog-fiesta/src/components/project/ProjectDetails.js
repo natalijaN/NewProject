@@ -8,17 +8,18 @@ const ProjectDetails = (props) => {
   const { project } = props;
   if (project) {
     return (
-      <div className="container section project-details">
-        <div className="card z-depth-0">
+      <div className="container section project-details ">
+        <div className="card z-depth-0 form-showing">
           <div className="card-content">
             <span className="card-title">{project.title}</span>
             <p>{project.content}</p>
           </div>
-          <div className="card-action grey lighten-4 grey-text">
-            <div>Објавено од {project.authorFirstName} {project.authorLastName}</div>
+          <div className="card-action grey lighten-4 grey-text form-showing">
+          <img src={project.url}></img>
+            <div>Објавено од {project.authorFirstName} {project.authorLastName}</div>        
             <div>{moment(project.createdAt.toDate()).calendar()}</div>
           </div>
-        </div>
+        </div>  
       </div>
     )
   } else {

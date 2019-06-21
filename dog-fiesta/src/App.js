@@ -11,11 +11,11 @@ import Listing from './components/project/Listing';
 import AboutUs from './components/fromOldProject/AboutUs/AboutUs'
 import Interests from './components/fromOldProject/Interests/Interests'
 import Advices from './components/fromOldProject/Advices/Advices'
-import Breeds from './components/fromOldProject/Breeds/Breeds'
+import Breeds from './components/Breeds/Breeds'
+import BreedDetail from './components/Breeds/BreedDetail';
 import InterestDetail from './components/fromOldProject/Interests/InterestDetail'
 import AdviceDetail from './components/fromOldProject/Advices/AdviceDetail';
-import BreedDetail from './components/fromOldProject/Breeds/BreedDetail';
-import UploadImage from './components/project/UploadImage'
+
 
 class App extends Component {
   render() {
@@ -27,11 +27,10 @@ class App extends Component {
             <Route exact path='/' component={Dashboard}></Route>
             <Route path='/projects' component={Listing}></Route>
             <Route path='/project/:id' component={ProjectDetails}></Route>
-            <Route path='/uploadImage' component={UploadImage}></Route>
             <Route path='/signin' component={SignIn}></Route>
             <Route path='/signup' component={SignUp}></Route>
             <Route path='/create' component={CreateProject}></Route>
-            <Route path='/aboutUs' component={AboutUs}></Route>
+            <Route path='/aboutus' component={AboutUs}></Route>
             <Route path='/interests' component={Interests}></Route>
             <Route path='/interest/:id' component={InterestDetail}></Route>
             <Route path='/advices' component={Advices}></Route>
@@ -39,7 +38,7 @@ class App extends Component {
             <Route path='/breeds' component={Breeds}></Route>
             <Route path='/breed/:id' component={BreedDetail}></Route>
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </BrowserRouter>
     )

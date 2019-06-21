@@ -12,23 +12,29 @@ html {
     color:#555;
     font-family: 'Lato','Arial', sans-serif;
     font-weight: 300;
-    font-size: 20px; 
+    font-size: 18px; 
     text-rendering: optimizeLegibility;
 }
 
 body {
-    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(/img/dog-background.jpg);   
+    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(/img/dog-background.jpg);  
+    background: #555; 
     background-size:cover;
     background-position: center;
     height:100vh;
-    background-attachment: fixed;
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
+}
+
+  
+main {
+    flex: 1 0 auto!important;
 }
 
 /* ------------------------- */
 /* HEADER*/
-/* ------------------------- */
+
 
 .dog-text-box {
     position:relative;
@@ -38,7 +44,9 @@ body {
     transform: translate(-50%,-50%);
 }
 
+/* ------------------------- */
 /* ---HEADINGS----*/
+/* ------------------------- */
 
 h1, h2,h3 {   
     font-weight: 300;
@@ -57,7 +65,7 @@ h1 {
 h2 {
     font-size: 140%;
     word-spacing: 2px;
-    margin-top: 320px;
+    margin-top: 65px;
 }
 
 h3 {
@@ -87,7 +95,9 @@ footer > div > .col > h3:after {
     margin:0 auto;
 }
 
+/* ------------------------- */
 /*---BUTTONS----*/
+/* ------------------------- */
 
 .btn:link, 
 .btn:visited {
@@ -109,29 +119,17 @@ footer > div > .col > h3:after {
     background-color:#25a25a;
 }
 
-
+/* ------------------------- */
 /* MAIN - NAVIGATION */
+/* ------------------------- */
 
 .small-nav {
     position: fixed;
-    top: 0;
-    left: 0;
+    top:0;
     width: 100%;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.89);
     box-shadow: 0 2px 2px rgb(235, 234, 234);
-    height: 60px;
 }
-.small-nav  .main-nav > li > a:link,
-.small-nav  .main-nav > li > a:visited {
-    padding: 18px 0;
-    color:#555; 
-}
-
-.small-nav.main-nav {   
-    margin-top:18px;
-}
-
 
 /* ------------------------- */
 /* MAIN SECTION*/
@@ -166,12 +164,15 @@ figure > img:hover {
 /* FOOTER*/
 /* ------------------------- */
 
-.my-footer {
-    width:100% !important;
-    margin-top: 100px;
+footer {
+    padding: 20px;
+    box-shadow: 0 2px 2px rgb(235, 234, 234);
 }
 
+/* ------------------------- */
 /* FORM */
+/* ------------------------- */
+
 form {
     padding: 10px;
     margin-top: 100px;
@@ -183,17 +184,11 @@ form {
     margin: 20px 0;
   }
 
-  /* .project-list {
-    width:100%;
-     margin-top: 40px !important;
-  } */
-  
-
   input[type=text]:not(.browser-default):focus:not([readonly]),
   input[type=email]:not(.browser-default):focus:not([readonly]),
   input[type=password]:not(.browser-default):focus:not([readonly]),
   textarea.materialize-textarea:focus:not([readonly]){
-    border-color: #ec407a;
+    border-color: #2ecc71;
     box-shadow: none;
   }
   
@@ -201,23 +196,13 @@ form {
   textarea.materialize-textarea:focus:not([readonly]) + label,
   input[type=email]:not(.browser-default):focus:not([readonly]) + label,
   input[type=password]:not(.browser-default):focus:not([readonly]) + label{
-    color: #ec407a !important;
-  }
-  
-  /* .main-text {
-      margin-top:30%!important;
-  } */
-  
-  body {
-    display: flex!important;
-    min-height: 100vh!important;
-    flex-direction: column!important;
-  }
-  
-  main {
-    flex: 1 0 auto!important;
+    color: #2ecc71 !important;
   }
 
+  .form-showing {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)!important;
+    border-radius: 15px;
+}
 
   .about-us {
       margin-top: 200px;
@@ -232,7 +217,7 @@ form {
   }
   
   .img-content {
-      width: 150px;
+      width: 100px;
       height: auto;
   }
 
@@ -244,10 +229,3 @@ form {
       margin: 10px;
   }
 
-  .project-summary {
-      top:50px;
-  }
-
-  .upload-image {
-      margin-top:-20px;
-  }

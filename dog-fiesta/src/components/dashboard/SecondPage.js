@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './styleDashboard.css'
 
 export class SecondPage extends Component {
     render() {
@@ -9,7 +10,7 @@ export class SecondPage extends Component {
                         <p style={{ 'whiteSpace': 'pre-wrap' }}></p>
                         кое те сака тебе повеќе отколку што се сака себеси.</h2>
                 </div>
-                <div className="row center">
+                <div className="row center figure">
                     <div className="col s3">
                         <figure>
                             <h3><a href="Breeds/index.html" className="section-link">Ротвајлер</a></h3>
@@ -34,7 +35,7 @@ export class SecondPage extends Component {
                         </figure>
                     </div>
                 </div>
-                <div className="row center">
+                <div className="row center figure">
                     <div className="col s3">
                         <figure>
                             <h3><a href="Breeds/index.html" className="section-link">Француски булдог</a></h3>

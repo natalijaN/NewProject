@@ -25,23 +25,26 @@ class SignIn extends Component {
         if (auth.uid) return <Redirect to='/' />
         return (
             <div className='container'>
-                <form className='white' onSubmit={this.handleSubmit}>
-                    <h5 className='grey-text text-darken-3'>Најави се</h5>
-                    <div className='input-field'>
-                        <label htmlFor='email'>Е-пошта</label>
-                        <input type='email' id='email' onChange={this.handleChange} />
-                    </div>
-                    <div className='input-field'>
-                        <label htmlFor='password'>Лозинка</label>
-                        <input type='password' id='password' onChange={this.handleChange} />
-                    </div>
-                    <div className='input-field'>
-                        <button className='btn green linghten-1 z-depth-0'>Најави се</button>
-                        <div className='red-text center'>
-                            {authError ? <p>Неуспешно најавување</p> : null}
+                <div className='row'>
+                    <div className="col m2"></div>
+                    <form className='white col m8 form-showing' onSubmit={this.handleSubmit}>
+                        <h5 className='grey-text text-darken-3'>Најави се</h5>
+                        <div className='input-field'>
+                            <label htmlFor='email'>Е-пошта</label>
+                            <input type='email' id='email' onChange={this.handleChange} />
                         </div>
-                    </div>
-                </form>
+                        <div className='input-field'>
+                            <label htmlFor='password'>Лозинка</label>
+                            <input type='password' id='password' onChange={this.handleChange} />
+                        </div>
+                        <div className='input-field'>
+                            <button className='btn green linghten-1 z-depth-0'>Најави се</button>
+                            <div className='red-text center'>
+                                {authError ? <p>Неуспешно најавување</p> : null}
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }

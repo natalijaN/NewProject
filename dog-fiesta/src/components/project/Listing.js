@@ -3,6 +3,7 @@ import ProjectList from '../project/ProjectList'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
+import './styleProjects.css';
 
 class Listing extends Component {  
     render() {

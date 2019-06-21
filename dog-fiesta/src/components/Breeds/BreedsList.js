@@ -4,7 +4,7 @@ import BreedSummary from './BreedSummary';
 
 const BreedsList = ({ breeds }) => {
     return (
-        <div className='project-list section'>
+        <div>
             {breeds && breeds.map(breed => {
                 return (
                     <Link to={'/breed/' + breed.id} key={breed.id}>
