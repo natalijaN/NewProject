@@ -5,7 +5,6 @@ import { firestoreConnect } from 'react-redux-firebase'
 import BreedsList from './BreedsList';
 
 class ListingBreeds extends Component {
-
     render() {
         const { breeds } = this.props;
         return (

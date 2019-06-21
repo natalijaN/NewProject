@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import BreedSummary from './BreedSummary'
+import InterestSummary from './InterestSummary';
 import Pagination from "react-paginating";
 
-class BreedsList extends Component {
+class InterestList extends Component {
     state = {
         currentPage: 1
     };
@@ -16,16 +16,16 @@ class BreedsList extends Component {
 
     render() {
         const limit = 2;
-        const breeds = this.props.breeds;
+        const interests = this.props.interests;
         const pageCount = 3;
-        const total = breeds.length * limit;
+        const total = interests.length * limit;
         const { currentPage } = this.state;
         return (
             <div>
                 <ul>
-                    {breeds.map((breed, index) => (
-                        <Link to={'/breed/' + breed.id} key={breed.id}>
-                            {index >= ((currentPage - 1) * limit) && index < (currentPage * limit) ? <BreedSummary breed={breed} /> : null}
+                    {interests.map((interest, index) => (
+                        <Link to={'/interest/' + interest.id} key={interest.id}>
+                            {index >= ((currentPage - 1) * limit) && index < (currentPage * limit) ? <InterestSummary interest={interest} /> : null}
                         </Link>
                     ))}
                 </ul>
@@ -68,7 +68,7 @@ class BreedsList extends Component {
 
                                     {pages.map(page => {
                                         let activePage = null;
-                                        if (currentPage === page) {                                      
+                                        if (currentPage === page) {
                                         }
                                         return (
                                             <button className='btn green'
@@ -113,5 +113,4 @@ class BreedsList extends Component {
     }
 }
 
-export default BreedsList
-
+export default InterestList

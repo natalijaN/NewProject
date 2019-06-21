@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
-import ListingContent from './ListingContent'
+import ListingInterests from './ListingInterests'
 import { Link } from 'react-router-dom'
 
 export class Interests extends Component {
     render() {
         const { interests } = this.props;
-        const now = interests !== undefined ? (<ListingContent interests={interests} />) : (<p className='white-text'>no</p>)
+        const now = interests !== undefined ? (<ListingInterests interests={interests} />) : (<p className='white-text'>no</p>)
         return (
             <div className='row'>
                 <div className="col m4 about-us">

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import BreedSummary from './BreedSummary'
+import AdviceSummary from './AdviceSummary';
 import Pagination from "react-paginating";
 
-class BreedsList extends Component {
+class AdvicesList extends Component {
     state = {
         currentPage: 1
     };
@@ -16,16 +16,17 @@ class BreedsList extends Component {
 
     render() {
         const limit = 2;
-        const breeds = this.props.breeds;
+        const advices = this.props.advices;
         const pageCount = 3;
-        const total = breeds.length * limit;
+        const total = advices.length * limit;
         const { currentPage } = this.state;
+
         return (
             <div>
                 <ul>
-                    {breeds.map((breed, index) => (
-                        <Link to={'/breed/' + breed.id} key={breed.id}>
-                            {index >= ((currentPage - 1) * limit) && index < (currentPage * limit) ? <BreedSummary breed={breed} /> : null}
+                    {advices.map((advice, index) => (
+                        <Link to={'/advice/' + advice.id} key={advice.id}>
+                            {index >= ((currentPage - 1) * limit) && index < (currentPage * limit) ? <AdviceSummary advice={advice} /> : null}
                         </Link>
                     ))}
                 </ul>
@@ -113,5 +114,4 @@ class BreedsList extends Component {
     }
 }
 
-export default BreedsList
-
+export default AdvicesList

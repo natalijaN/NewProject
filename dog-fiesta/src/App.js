@@ -3,19 +3,18 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Dashboard from './components/dashboard/Dashboard';
-import ProjectDetails from './components/project/ProjectDetails'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/project/CreateProject';
+import ProjectDetails from './components/project/ProjectDetails'
 import Listing from './components/project/Listing';
-import AboutUs from './components/fromOldProject/AboutUs/AboutUs'
-import Interests from './components/fromOldProject/Interests/Interests'
-import Advices from './components/fromOldProject/Advices/Advices'
+import AboutUs from './components/AboutUs/AboutUs'
+import Interests from './components/Interests/Interests'
+import InterestDetail from './components/Interests/InterestDetail'
+import Advices from './components/Advices/Advices'
+import AdviceDetail from './components/Advices/AdviceDetail';
 import Breeds from './components/Breeds/Breeds'
 import BreedDetail from './components/Breeds/BreedDetail';
-import InterestDetail from './components/fromOldProject/Interests/InterestDetail'
-import AdviceDetail from './components/fromOldProject/Advices/AdviceDetail';
-
 
 class App extends Component {
   render() {

@@ -4,7 +4,7 @@ import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import InterestList from './InterestList'
 
-class ListingContent extends Component {
+class ListingInterests extends Component {
     render() {
         const { interests } = this.props;
         return (
@@ -26,5 +26,5 @@ export default compose(
     firestoreConnect([
         { collection: 'interests' }
     ])
-)(ListingContent)
+)(ListingInterests)
 
