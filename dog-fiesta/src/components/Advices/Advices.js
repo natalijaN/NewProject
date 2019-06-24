@@ -15,22 +15,22 @@ export class Advices extends Component {
                     <ul>
                         <li>
                             <Link to='/breeds'>
-                                <a className="btn green darken-2 my-btns">Раси</a>
+                                <button className="btn green darken-2 my-btns">Раси</button>
                             </Link>
                         </li>
                         <li>
                             <Link to='/advices'>
-                                <a className="btn green darken-2 my-btns">Совети</a>
+                                <button className="btn green darken-2 my-btns">Совети</button>
                             </Link>
                         </li>
                         <li>
                             <Link to='/interests'>
-                                <a className="btn green darken-2 my-btns">Занимливости</a>
+                                <button className="btn green darken-2 my-btns">Занимливости</button>
                             </Link>
                         </li>
                         <li>
                             <Link to='/aboutus'>
-                                <a className="btn green darken-2 my-btns">За нас</a>
+                                <button className="btn green darken-2 my-btns">За нас</button>
                             </Link>
                         </li>
                     </ul>

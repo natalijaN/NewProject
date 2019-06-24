@@ -31,6 +31,7 @@ class AdvicesList extends Component {
                     ))}
                 </ul>
                 <div className='row center'>
+
                     <Pagination
                         total={total}
                         limit={limit}
@@ -69,14 +70,13 @@ class AdvicesList extends Component {
 
                                     {pages.map(page => {
                                         let activePage = null;
-                                        if (currentPage === page) {                                      
+                                        if (currentPage === page) {
                                         }
                                         return (
                                             <button className='btn green'
                                                 {...getPageItemProps({
                                                     pageValue: page,
                                                     key: page,
-                                                    backgroundColor: "#555",
                                                     style: activePage,
                                                     onPageChange: this.handlePageChange
                                                 })}

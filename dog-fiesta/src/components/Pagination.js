@@ -1,82 +1,93 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Pagination = () => {
-    console.log
-    return (
-        <div>
-            {({
-                pages,
-                currentPage,
-                hasNextPage,
-                hasPreviousPage,
-                previousPage,
-                nextPage,
-                totalPages,
-                getPageItemProps
-            }) => (
-                    <div>
-                        <button className='btn green'
-                            {...getPageItemProps({
-                                pageValue: 1,
-                                onPageChange: this.handlePageChange
-                            })}
-                        >
-                            Прва
-                    </button>
+class Pagination extends Component {
+    state = {
+        currentPage: 1
+    };
 
-                        {hasPreviousPage && (
+    handlePageChange = (page, e) => {
+        this.setState({
+            currentPage: page
+        });
+        console.log(this.state)
+    };
+    render() {
+        return (
+            <div>
+                {({
+                    pages,
+                    currentPage,
+                    hasNextPage,
+                    hasPreviousPage,
+                    previousPage,
+                    nextPage,
+                    totalPages,
+                    getPageItemProps
+                }) => (
+                        <div>
                             <button className='btn green'
                                 {...getPageItemProps({
-                                    pageValue: previousPage,
+                                    pageValue: 1,
                                     onPageChange: this.handlePageChange
                                 })}
                             >
-                                {"<"}
-                            </button>
-                        )}
+                                Прва
+                    </button>
 
-                        {pages.map(page => {
-                            let activePage = null;
-                            if (currentPage === page) {
-                            }
-                            return (
+                            {hasPreviousPage && (
                                 <button className='btn green'
                                     {...getPageItemProps({
-                                        pageValue: page,
-                                        key: page,
-                                        backgroundColor: "#555",
-                                        style: activePage,
+                                        pageValue: previousPage,
                                         onPageChange: this.handlePageChange
                                     })}
                                 >
-                                    {page}
+                                    {"<"}
                                 </button>
-                            );
-                        })}
+                            )}
 
-                        {hasNextPage && (
+                            {pages.map(page => {
+                                let activePage = null;
+                                if (currentPage === page) {
+                                }
+                                return (
+                                    <button className='btn green'
+                                        {...getPageItemProps({
+                                            pageValue: page,
+                                            key: page,
+                                            backgroundColor: "#555",
+                                            style: activePage,
+                                            onPageChange: this.handlePageChange
+                                        })}
+                                    >
+                                        {page}
+                                    </button>
+                                );
+                            })}
+
+                            {hasNextPage && (
+                                <button className='btn green'
+                                    {...getPageItemProps({
+                                        pageValue: nextPage,
+                                        onPageChange: this.handlePageChange
+                                    })}
+                                >
+                                    {">"}
+                                </button>
+                            )}
+
                             <button className='btn green'
                                 {...getPageItemProps({
-                                    pageValue: nextPage,
+                                    pageValue: totalPages,
                                     onPageChange: this.handlePageChange
                                 })}
                             >
-                                {">"}
-                            </button>
-                        )}
-
-                        <button className='btn green'
-                            {...getPageItemProps({
-                                pageValue: totalPages,
-                                onPageChange: this.handlePageChange
-                            })}
-                        >
-                            Последна
+                                Последна
                     </button>
-                    </div>
-                )}
-        </div>
-    )
+                        </div>
+                    )}
+            </div>
+        )
+    }
 }
 
 export default Pagination

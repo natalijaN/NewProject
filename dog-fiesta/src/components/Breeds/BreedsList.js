@@ -75,7 +75,6 @@ class BreedsList extends Component {
                                                 {...getPageItemProps({
                                                     pageValue: page,
                                                     key: page,
-                                                    backgroundColor: "#555",
                                                     style: activePage,
                                                     onPageChange: this.handlePageChange
                                                 })}
