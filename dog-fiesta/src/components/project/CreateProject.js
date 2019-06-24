@@ -3,7 +3,6 @@ import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
 import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectAction'
-import Radiocomponent from './Radiocomponent'
 
 class CreateProject extends Component {
     state = {
