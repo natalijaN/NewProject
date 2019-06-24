@@ -30,8 +30,8 @@ export class Footer extends Component {
                         </div>
                     </div>
                     <div className='row'>
-                        <div class="footer-copyright center">
-                            <div class="container">
+                        <div className="footer-copyright center">
+                            <div className="container">
                                 <p>© 2019 Copyright DogFiesta. Сите права се задржани</p>
                             </div>
                         </div>

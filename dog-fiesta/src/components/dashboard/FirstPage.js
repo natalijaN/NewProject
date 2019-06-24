@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class FirstPage extends Component {
     render() {
         return (
-            <div className="dog-text-box container">
+            <div className="dog-text-box container">          
                 <div className='row main-text'>
                     <h1>Кучињата не се целиот наш живот,
                 <p style={{ 'whiteSpace': 'pre-wrap' }}></p>

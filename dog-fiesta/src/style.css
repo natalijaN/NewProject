@@ -33,8 +33,8 @@ main {
 }
 
 /* ------------------------- */
-/* HEADER*/
-
+/* FIRST PAGE*/
+/* ------------------------- */
 
 .dog-text-box {
     position:relative;
@@ -119,6 +119,13 @@ footer > div > .col > h3:after {
     background-color:#25a25a;
 }
 
+.my-btns {
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px 50px;
+    font-size: 110%;
+    margin: 10px;
+}
 /* ------------------------- */
 /* MAIN - NAVIGATION */
 /* ------------------------- */
@@ -204,6 +211,10 @@ form {
     border-radius: 15px;
 }
 
+/* ------------------------- */
+/* ABOUT US */
+/* ------------------------- */
+
   .about-us {
       margin-top: 200px;
   }
@@ -221,11 +232,15 @@ form {
       height: auto;
   }
 
-  .my-btns {
-      border-radius: 5px;
-      height: 50px;
-      padding: 10px 50px;
-      font-size: 110%;
-      margin: 10px;
-  }
+  
+/* ------------------------- */
+/* MEDIA QUERIES */
+/* ------------------------- */
 
+  @media only screen and (max-width: 1200px) {
+    .dog-text-box {
+        width: 100%;
+        padding: 0 2%;
+    }
+    .row { padding: 0 2%; }
+}

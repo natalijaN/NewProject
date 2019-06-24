@@ -13,12 +13,22 @@ const InterestDetail = (props) => {
             <span className="card-title">{interest.title}</span>
             <p>{interest.paragraph1}</p>
           </div>
-          <div className="card-action grey lighten-4 grey-text">
+          <div className="card-action grey lighten-4 grey-text center">
             <img src={interest.image}></img>
           </div>
           <div className="card-content">
             <div>{interest.paragraph2}</div>
           </div>
+          {interest.image2 !== null ? 
+            (<div className="card-action grey lighten-4 grey-text center">
+                <img src={interest.image2}></img>
+            </div>) 
+            : null}
+          {interest.paragraph3 !== null ?
+            (<div className="card-content">
+                <div>{interest.paragraph3}</div>
+            </div>)
+            : null}
         </div>
       </div>
     )
@@ -32,7 +42,6 @@ const InterestDetail = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state)
   const id = ownProps.match.params.id;
   const interests = state.firestore.data.interests;
   const interest = interests ? interests[id] : null

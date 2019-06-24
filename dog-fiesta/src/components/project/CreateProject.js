@@ -3,6 +3,7 @@ import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
 import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectAction'
+import Radiocomponent from './Radiocomponent'
 
 class CreateProject extends Component {
     state = {
@@ -11,7 +12,7 @@ class CreateProject extends Component {
         isUploading: false,
         image: "",
         progress: 0,
-        url: ""
+        url: "", 
     };
 
     handleChangeTitle = event => this.setState({ title: event.target.value });
@@ -31,16 +32,16 @@ class CreateProject extends Component {
             .then(url => this.setState({ url: url }))
     };
 
-    handleCreate = (e) => {
+    handleCreate = () => {
         this.props.createProject(this.state)
     }
 
     render() {
-        return (
+        return (     
             <div className='row'>
-            <div className="col m2"></div>
+                <div className="col m2"></div>
                 <form className='white center col m8 form-showing'>
-                    <h5 className='grey-text text-darken-3'>Креирај Нов Оглас</h5>
+                    <h5 className='grey-text text-darken-3'>Креирај Нов Оглас</h5>           
                     <div className='input-field'>
                         <label htmlFor='title'>Наслов</label>
                         <input type='text' value={this.state.title} id='title' onChange={this.handleChangeTitle} />

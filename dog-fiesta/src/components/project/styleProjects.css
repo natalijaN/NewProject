@@ -20,3 +20,16 @@ body {
     margin-right:10px;
     font-size:100%;
 }
+
+.label-checkbox {
+    display:inline-block;
+    text-indent: -15px;
+    margin-right: 51px;
+    margin-left: 68px;
+  }
+
+.input-checkbox {
+    margin-left: -21px;
+    margin-top: 4px;
+    opacity: 1!important;
+}
