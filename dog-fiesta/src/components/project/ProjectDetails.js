@@ -15,11 +15,11 @@ const ProjectDetails = (props) => {
             <p>{project.content}</p>
           </div>
           <div className="card-action grey lighten-4 grey-text form-showing">
-          <img src={project.url}></img>
-            <div>Објавено од {project.authorFirstName} {project.authorLastName}</div>        
+            <img src={project.url}></img>
+            <div>Објавено од {project.authorFirstName} {project.authorLastName}</div>
             <div>{moment(project.createdAt.toDate()).calendar()}</div>
           </div>
-        </div>  
+        </div>
       </div>
     )
   } else {

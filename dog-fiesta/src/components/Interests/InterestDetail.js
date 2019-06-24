@@ -4,6 +4,16 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 
 const InterestDetail = (props) => {
+
+  function Validate(paragraph) {
+    let newLine = '<';
+    if (paragraph.match(newLine)) {
+      paragraph = paragraph.replace(/[<]/g, <br /> );
+      return paragraph;
+    }
+    return paragraph;
+  }
+
   const { interest } = props;
   if (interest) {
     return (
@@ -11,22 +21,22 @@ const InterestDetail = (props) => {
         <div className="card z-depth-0">
           <div className="card-content">
             <span className="card-title">{interest.title}</span>
-            <p>{interest.paragraph1}</p>
+            <p>{Validate(interest.paragraph1)}</p>
           </div>
           <div className="card-action grey lighten-4 grey-text center">
             <img src={interest.image}></img>
           </div>
           <div className="card-content">
-            <div>{interest.paragraph2}</div>
+            <div id='test'>{interest.paragraph2}</div>
           </div>
-          {interest.image2 !== null ? 
+          {interest.image2 !== null ?
             (<div className="card-action grey lighten-4 grey-text center">
-                <img src={interest.image2}></img>
-            </div>) 
+              <img src={interest.image2}></img>
+            </div>)
             : null}
           {interest.paragraph3 !== null ?
             (<div className="card-content">
-                <div>{interest.paragraph3}</div>
+              <div>{interest.paragraph3}</div>
             </div>)
             : null}
         </div>

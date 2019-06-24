@@ -74,8 +74,7 @@ class InterestList extends Component {
                                             <button className='btn green'
                                                 {...getPageItemProps({
                                                     pageValue: page,
-                                                    key: page,
-                                                    backgroundColor: "#555",
+                                                    key: page,                                     
                                                     style: activePage,
                                                     onPageChange: this.handlePageChange
                                                 })}
