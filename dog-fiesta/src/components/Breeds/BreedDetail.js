@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
+import FormatParagraph from '../FormatParagraph'
 
 const BreedDetail = (props) => {
   const { breed } = props;
@@ -11,22 +12,22 @@ const BreedDetail = (props) => {
         <div className="card z-depth-0">
           <div className="card-content">
             <span className="card-title">{breed.title}</span>
-            <p>{breed.paragraph1}</p>
+            <p id='modify'>{FormatParagraph(breed.paragraph1)}</p>
           </div>
           <div className="card-action grey lighten-4 grey-text center">
             <img src={breed.image} width="400px" height="300px"></img>
           </div>
           <div className="card-content">
-            <div>{breed.paragraph2}</div>
+            <div id='modify'>{FormatParagraph(breed.paragraph2)}</div>
           </div>
-          {breed.image2 !== null ? 
+          {breed.image2 !== undefined ?
             (<div className="card-action grey lighten-4 grey-text center">
-                <img src={breed.image2}></img>
-            </div>) 
+              <img src={breed.image2}></img>
+            </div>)
             : null}
-          {breed.paragraph3 !== null ?
+          {breed.paragraph3 !== undefined ?
             (<div className="card-content">
-                <div>{breed.paragraph3}</div>
+              <div id='modify'>{FormatParagraph(breed.paragraph3)}</div>
             </div>)
             : null}
         </div>

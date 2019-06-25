@@ -232,6 +232,9 @@ form {
       height: auto;
   }
 
+  #modify {
+    white-space: pre-wrap;
+  }
   
 /* ------------------------- */
 /* MEDIA QUERIES */
