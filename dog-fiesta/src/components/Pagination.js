@@ -1,19 +1,26 @@
 import React, { Component } from 'react'
+import Pagination from "react-paginating";
 
-class Pagination extends Component {
+class Page extends Component {
     state = {
         currentPage: 1
     };
 
     handlePageChange = (page, e) => {
+        console.log(page)
         this.setState({
             currentPage: page
         });
-        console.log(this.state)
     };
     render() {
+        const { total, limit, pageCount } = this.props;
         return (
-            <div>
+            <Pagination
+                total={total}
+                limit={limit}
+                pageCount={pageCount}
+                currentPage={this.state.currentPage}
+            >
                 {({
                     pages,
                     currentPage,
@@ -32,8 +39,7 @@ class Pagination extends Component {
                                 })}
                             >
                                 Прва
-                    </button>
-
+                            </button>
                             {hasPreviousPage && (
                                 <button className='btn green'
                                     {...getPageItemProps({
@@ -54,7 +60,6 @@ class Pagination extends Component {
                                         {...getPageItemProps({
                                             pageValue: page,
                                             key: page,
-                                            backgroundColor: "#555",
                                             style: activePage,
                                             onPageChange: this.handlePageChange
                                         })}
@@ -82,12 +87,11 @@ class Pagination extends Component {
                                 })}
                             >
                                 Последна
-                    </button>
+                            </button>
                         </div>
                     )}
-            </div>
+            </Pagination>
         )
     }
 }
-
-export default Pagination
+export default Page

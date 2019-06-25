@@ -15,7 +15,7 @@ export class Breeds extends Component {
                     <ul>
                         <li>
                             <Link to='/breeds'>
-                                <button className="btn green darken-2 my-btns">Раси</button>
+                                <button className="btn green darken-2 my-btns active">Раси</button>
                             </Link>
                         </li>
                         <li>

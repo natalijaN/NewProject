@@ -48,7 +48,7 @@ main {
 /* ---HEADINGS----*/
 /* ------------------------- */
 
-h1, h2,h3 {   
+h1,h2,h3 {   
     font-weight: 300;
     text-transform: uppercase; 
     letter-spacing: 2px;
@@ -116,7 +116,8 @@ footer > div > .col > h3:after {
 
 .btn:hover,
 .btn:active{
-    background-color:#25a25a;
+    background-color:#23814a!important;
+    color:white!important;
 }
 
 .my-btns {
@@ -126,6 +127,7 @@ footer > div > .col > h3:after {
     font-size: 110%;
     margin: 10px;
 }
+
 /* ------------------------- */
 /* MAIN - NAVIGATION */
 /* ------------------------- */

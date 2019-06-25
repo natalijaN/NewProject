@@ -56,7 +56,7 @@ class AdvicesList extends Component {
                                         })}
                                     >
                                         Прва
-                    </button>
+                                    </button>
                                     {hasPreviousPage && (
                                         <button className='btn green'
                                             {...getPageItemProps({
@@ -104,7 +104,7 @@ class AdvicesList extends Component {
                                         })}
                                     >
                                         Последна
-                    </button>
+                                    </button>
                                 </div>
                             )}
                     </Pagination>

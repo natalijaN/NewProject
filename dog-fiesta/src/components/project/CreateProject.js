@@ -8,9 +8,9 @@ class CreateProject extends Component {
     state = {
         title: "",
         content: "",
-        isUploading: false,
-        image: "",
+        isUploading: false,  
         progress: 0,
+        image: [],
         url: "", 
     };
 
@@ -22,7 +22,7 @@ class CreateProject extends Component {
         this.setState({ isUploading: false });
     };
     handleUploadSuccess = (filename) => {
-        this.setState({ image: filename, progress: 100, isUploading: false });
+        this.setState({ image: [...this.state.image, filename] , progress: 100, isUploading: false });
         firebase
             .storage()
             .ref("images")

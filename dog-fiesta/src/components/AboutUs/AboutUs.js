@@ -25,7 +25,7 @@ export class AboutUs extends Component {
                         </li>
                         <li>
                             <Link to='/aboutus'>
-                                <a className="btn green darken-2 my-btns">За нас</a>
+                                <a className="btn green darken-2 my-btns active">За нас</a>
                             </Link>
                         </li>
                     </ul>
