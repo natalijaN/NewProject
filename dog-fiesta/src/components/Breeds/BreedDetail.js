@@ -36,7 +36,7 @@ const BreedDetail = (props) => {
   } else {
     return (
       <div className="container center">
-        <p>Sе вчитува...</p>
+        <p>Се вчитува...</p>
       </div>
     )
   }
@@ -56,4 +56,4 @@ export default compose(
   firestoreConnect([
     { collection: 'advices' }
   ])
-)(BreedDetail) 
+)(BreedDetail)

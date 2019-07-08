@@ -8,14 +8,14 @@ import { Link } from 'react-router-dom'
 export class Interests extends Component {
     render() {
         const { interests } = this.props;
-        const now = interests !== undefined ? (<ListingInterests interests={interests} />) : (<p className='white-text'>no</p>)
+        const interestResponse = interests !== undefined ? (<ListingInterests interests={interests} />) : (<p className='white-text'>Се вчитува...</p>)
         return (
             <div className='row'>
                 <div className="col m4 about-us">
                     <ul>
                         <li>
                             <Link to='/breeds'>
-                                <button className="btn green darken-2 my-btns">Раси</button>               
+                                <button className="btn green darken-2 my-btns">Раси</button>
                             </Link>
                         </li>
                         <li>
@@ -37,7 +37,7 @@ export class Interests extends Component {
                 </div>
                 <div className='col m8'>
                     <h2 className="white-text center" id="aboutUs">Занимливости</h2>
-                    {now}
+                    {interestResponse}
                 </div>
             </div>
         )

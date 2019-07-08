@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 export class Advices extends Component {
     render() {
         const { advices } = this.props;
-        const now = advices !== undefined ? (<ListingAdvices advices={advices} />) : (<p className='white-text'>no</p>)
+        const advicesResponse = advices !== undefined ? (<ListingAdvices advices={advices} />) : (<p className='white-text'>Се вчитува...</p>)
         return (
             <div className='row'>
                 <div className="col m4 about-us">
@@ -37,7 +37,7 @@ export class Advices extends Component {
                 </div>
                 <div className='col m8'>
                     <h2 className="white-text center" id="aboutUs">Совети</h2>
-                    {now}
+                    {advicesResponse}
                 </div>
             </div>
         )

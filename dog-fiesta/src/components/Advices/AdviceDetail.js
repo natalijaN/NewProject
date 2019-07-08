@@ -20,14 +20,14 @@ const AdviceDetail = (props) => {
           <div className="card-content">
             <div id='modify'>{FormatParagraph(advice.paragraph2)}</div>
           </div>
-          {advice.image2 !== undefined ? 
+          {advice.image2 !== undefined ?
             (<div className="card-action grey lighten-4 grey-text center">
-                <img src={advice.image2}></img>
-            </div>) 
+              <img src={advice.image2}></img>
+            </div>)
             : null}
           {advice.paragraph3 !== undefined ?
             (<div className="card-content">
-                <div id='modify'>{FormatParagraph(advice.paragraph3)}</div>
+              <div id='modify'>{FormatParagraph(advice.paragraph3)}</div>
             </div>)
             : null}
         </div>
@@ -36,7 +36,7 @@ const AdviceDetail = (props) => {
   } else {
     return (
       <div className="container center">
-        <p>Sе вчитува...</p>
+        <p>Се вчитува...</p>
       </div>
     )
   }
@@ -56,4 +56,4 @@ export default compose(
   firestoreConnect([
     { collection: 'advices' }
   ])
-)(AdviceDetail) 
+)(AdviceDetail)

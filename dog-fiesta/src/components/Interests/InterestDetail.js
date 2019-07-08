@@ -25,10 +25,10 @@ const InterestDetail = (props) => {
               <img src={interest.image2}></img>
             </div>)
             : null}
-          {interest.paragraph3 !== undefined ?  
-             (<div className="card-content">
+          {interest.paragraph3 !== undefined ?
+            (<div className="card-content">
               <div id='modify'>{FormatParagraph(interest.paragraph3)}</div>
-            </div>) 
+            </div>)
             : null}
         </div>
       </div>
@@ -36,7 +36,7 @@ const InterestDetail = (props) => {
   } else {
     return (
       <div className="container center">
-        <p>Sе вчитува...</p>
+        <p>Се вчитува...</p>
       </div>
     )
   }
@@ -56,4 +56,4 @@ export default compose(
   firestoreConnect([
     { collection: 'interests' }
   ])
-)(InterestDetail) 
+)(InterestDetail)
