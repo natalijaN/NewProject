@@ -43,3 +43,34 @@ body {
 .image-upload {
     margin-right: 5px;
 }
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+.custom-file-input::before {
+    content: 'Избери слика';
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 90%;
+    color: #999;
+  }
+
+input[type="file"]
+{
+   color: transparent;
+   width: 128px;
+   height: 30px;
+}
+
+.style-row {
+    margin-bottom: -10px;
+}
+
+

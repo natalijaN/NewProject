@@ -50,7 +50,7 @@ class CreateProject extends Component {
                         <textarea id='content' value={this.state.content} className='materialize-textarea' onChange={this.handleChangeContent}></textarea>
                     </div>
                     <label className="progress-label">Прогрес:</label>
-                    <div className="row">
+                    <div className="row style-row">
                         {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
                         {this.state.url[0] && <img className="image-upload" src={this.state.url[0]} />}
                         <FileUploader
@@ -61,10 +61,11 @@ class CreateProject extends Component {
                             onUploadStart={this.handleUploadStart}
                             onUploadError={this.handleUploadError}
                             onUploadSuccess={this.handleUploadSuccess}
+                            className="custom-file-input"
                             onProgress={this.handleProgress}
                         />
                     </div>
-                    <div className="row">
+                    <div className="row style-row">
                         {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
                         {this.state.url[1] && <img className="image-upload" src={this.state.url[1]} />}
                         <FileUploader
@@ -75,10 +76,11 @@ class CreateProject extends Component {
                             onUploadStart={this.handleUploadStart}
                             onUploadError={this.handleUploadError}
                             onUploadSuccess={this.handleUploadSuccess}
+                            className="custom-file-input"
                             onProgress={this.handleProgress}
                         />
                     </div>
-                    <div className="row">
+                    <div className="row style-row">
                         {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
                         {this.state.url[1] && <img className="image-upload" src={this.state.url[2]} />}
                         <FileUploader
@@ -90,6 +92,7 @@ class CreateProject extends Component {
                             onUploadError={this.handleUploadError}
                             onUploadSuccess={this.handleUploadSuccess}
                             onProgress={this.handleProgress}
+                            className="custom-file-input"
                         />
                     </div>
                     <button className='btn light-green z-depth-0' onClick={this.handleCreate}>Креирај</button>
