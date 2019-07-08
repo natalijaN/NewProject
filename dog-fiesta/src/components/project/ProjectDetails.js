@@ -15,7 +15,8 @@ const ProjectDetails = (props) => {
             <p>{project.content}</p>
           </div>
           <div className="card-action grey lighten-4 grey-text form-showing">
-            <img src={project.url}></img>
+            <img className="project-detail-img" src={project.url[0]}></img>
+            <img className="project-detail-img" src={project.url[1]}></img>
             <div>Објавено од {project.authorFirstName} {project.authorLastName}</div>
             <div>{moment(project.createdAt.toDate()).calendar()}</div>
           </div>

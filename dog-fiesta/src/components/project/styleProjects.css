@@ -33,3 +33,9 @@ body {
     margin-top: 4px;
     opacity: 1!important;
 }
+
+.project-detail-img {
+    margin-right: 10px;
+    height: 100px;
+    width: auto;
+}

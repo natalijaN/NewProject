@@ -11,7 +11,7 @@ class CreateProject extends Component {
         isUploading: false,
         progress: 0,
         image: [],
-        url: "",
+        url: [],
     };
 
     handleChangeTitle = event => this.setState({ title: event.target.value });
@@ -28,7 +28,7 @@ class CreateProject extends Component {
             .ref("images")
             .child(filename)
             .getDownloadURL()
-            .then(url => this.setState({ url: url }))
+            .then(url => this.setState({ url: [...this.state.url, url] }))
     };
 
     handleCreate = () => {
@@ -51,17 +51,32 @@ class CreateProject extends Component {
                     </div>
                     <label className="progress-label">Прогрес:</label>
                     {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
-                    {this.state.url && <img src={this.state.url} />}
-                    <FileUploader
-                        accept="image/*"
-                        name="image"
-                        randomizeFilename
-                        storageRef={firebase.storage().ref("images")}
-                        onUploadStart={this.handleUploadStart}
-                        onUploadError={this.handleUploadError}
-                        onUploadSuccess={this.handleUploadSuccess}
-                        onProgress={this.handleProgress}
-                    />
+                    <div className="row">
+                        {this.state.url[0] && <img src={this.state.url[0]} />}
+                        <FileUploader
+                            accept="image/*"
+                            name="image"
+                            randomizeFilename
+                            storageRef={firebase.storage().ref("images")}
+                            onUploadStart={this.handleUploadStart}
+                            onUploadError={this.handleUploadError}
+                            onUploadSuccess={this.handleUploadSuccess}
+                            onProgress={this.handleProgress}
+                        />
+                    </div>
+                    <div className="row">
+                        {this.state.url[1] && <img src={this.state.url[1]} />}
+                        <FileUploader
+                            accept="image/*"
+                            name="image"
+                            randomizeFilename
+                            storageRef={firebase.storage().ref("images")}
+                            onUploadStart={this.handleUploadStart}
+                            onUploadError={this.handleUploadError}
+                            onUploadSuccess={this.handleUploadSuccess}
+                            onProgress={this.handleProgress}
+                        />
+                    </div>
                     <button className='btn light-green z-depth-0' onClick={this.handleCreate}>Креирај</button>
                 </form>
             </div>
