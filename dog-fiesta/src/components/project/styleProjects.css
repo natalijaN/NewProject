@@ -39,3 +39,7 @@ body {
     height: 100px;
     width: auto;
 }
+
+.image-upload {
+    margin-right: 5px;
+}

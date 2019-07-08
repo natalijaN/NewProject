@@ -50,9 +50,9 @@ class CreateProject extends Component {
                         <textarea id='content' value={this.state.content} className='materialize-textarea' onChange={this.handleChangeContent}></textarea>
                     </div>
                     <label className="progress-label">Прогрес:</label>
-                    {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
                     <div className="row">
-                        {this.state.url[0] && <img src={this.state.url[0]} />}
+                        {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
+                        {this.state.url[0] && <img className="image-upload" src={this.state.url[0]} />}
                         <FileUploader
                             accept="image/*"
                             name="image"
@@ -65,7 +65,22 @@ class CreateProject extends Component {
                         />
                     </div>
                     <div className="row">
-                        {this.state.url[1] && <img src={this.state.url[1]} />}
+                        {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
+                        {this.state.url[1] && <img className="image-upload" src={this.state.url[1]} />}
+                        <FileUploader
+                            accept="image/*"
+                            name="image"
+                            randomizeFilename
+                            storageRef={firebase.storage().ref("images")}
+                            onUploadStart={this.handleUploadStart}
+                            onUploadError={this.handleUploadError}
+                            onUploadSuccess={this.handleUploadSuccess}
+                            onProgress={this.handleProgress}
+                        />
+                    </div>
+                    <div className="row">
+                        {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
+                        {this.state.url[1] && <img className="image-upload" src={this.state.url[2]} />}
                         <FileUploader
                             accept="image/*"
                             name="image"
