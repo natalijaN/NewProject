@@ -8,10 +8,10 @@ class CreateProject extends Component {
     state = {
         title: "",
         content: "",
-        isUploading: false,  
+        isUploading: false,
         progress: 0,
         image: [],
-        url: "", 
+        url: "",
     };
 
     handleChangeTitle = event => this.setState({ title: event.target.value });
@@ -22,7 +22,7 @@ class CreateProject extends Component {
         this.setState({ isUploading: false });
     };
     handleUploadSuccess = (filename) => {
-        this.setState({ image: [...this.state.image, filename] , progress: 100, isUploading: false });
+        this.setState({ image: [...this.state.image, filename], progress: 100, isUploading: false });
         firebase
             .storage()
             .ref("images")
@@ -36,11 +36,11 @@ class CreateProject extends Component {
     }
 
     render() {
-        return (     
+        return (
             <div className='row'>
                 <div className="col m2"></div>
                 <form className='white center col m8 form-showing'>
-                    <h5 className='grey-text text-darken-3'>Креирај Нов Оглас</h5>           
+                    <h5 className='grey-text text-darken-3'>Креирај Нов Оглас</h5>
                     <div className='input-field'>
                         <label htmlFor='title'>Наслов</label>
                         <input type='text' value={this.state.title} id='title' onChange={this.handleChangeTitle} />
@@ -50,7 +50,7 @@ class CreateProject extends Component {
                         <textarea id='content' value={this.state.content} className='materialize-textarea' onChange={this.handleChangeContent}></textarea>
                     </div>
                     <label className="progress-label">Прогрес:</label>
-                    {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
+                    {this.state.isUploading && <p>Прогрес: {this.state.progress}</p>}
                     {this.state.url && <img src={this.state.url} />}
                     <FileUploader
                         accept="image/*"
