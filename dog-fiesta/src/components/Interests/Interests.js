@@ -25,7 +25,7 @@ export class Interests extends Component {
                         </li>
                         <li>
                             <Link to='/interests'>
-                                <button className="btn green darken-2 my-btns">Занимливости</button>
+                                <button className="btn green darken-2 my-btns active">Занимливости</button>
                             </Link>
                         </li>
                         <li>

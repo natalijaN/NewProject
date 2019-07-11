@@ -20,7 +20,7 @@ export class Advices extends Component {
                         </li>
                         <li>
                             <Link to='/advices'>
-                                <button className="btn green darken-2 my-btns">Совети</button>
+                                <button className="btn green darken-2 my-btns active">Совети</button>
                             </Link>
                         </li>
                         <li>

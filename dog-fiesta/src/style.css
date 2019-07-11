@@ -12,13 +12,13 @@ html {
     color:#555;
     font-family: 'Museo','Arial', sans-serif;
     font-weight: 300;
-    font-size: 18px; 
+    font-size: 18px;
     text-rendering: optimizeLegibility;
 }
 
 body {
-    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(/img/dog-background.jpg);  
-    background: #555; 
+    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(/img/dog-background.jpg);
+    background: #555;
     background-size:cover;
     background-position: center;
     height:100vh;
@@ -27,7 +27,6 @@ body {
     flex-direction: column;
 }
 
-  
 main {
     flex: 1 0 auto!important;
 }
@@ -44,13 +43,17 @@ main {
     transform: translate(-50%,-50%);
 }
 
+.active {
+    color: unset;
+}
+
 /* ------------------------- */
 /* ---HEADINGS----*/
 /* ------------------------- */
 
-h1,h2,h3 {   
+h1,h2,h3 {
     font-weight: 300;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
@@ -69,7 +72,7 @@ h2 {
 }
 
 h3 {
-    text-transform: none; 
+    text-transform: none;
     font-size:100%;
     margin-bottom: 20px;
     word-spacing: 2px;
@@ -99,7 +102,7 @@ footer > div > .col > h3:after {
 /*---BUTTONS----*/
 /* ------------------------- */
 
-.btn:link, 
+.btn:link,
 .btn:visited {
     display: inline-block;
     margin-right: 5px;
@@ -188,7 +191,7 @@ form {
     position: relative;
     width: 70%;
   }
-  
+
   form button, form h5 {
     margin: 20px 0;
   }
@@ -200,7 +203,7 @@ form {
     border-color: #2ecc71;
     box-shadow: none;
   }
-  
+
   input[type=text]:not(.browser-default):focus:not([readonly]) + label,
   textarea.materialize-textarea:focus:not([readonly]) + label,
   input[type=email]:not(.browser-default):focus:not([readonly]) + label,
@@ -228,7 +231,7 @@ form {
   #aboutUs {
     margin-top: 80px;
   }
-  
+
   .img-content {
       width: 200px;;
       height: auto;
@@ -237,7 +240,7 @@ form {
   #modify {
     white-space: pre-wrap;
   }
-  
+
 /* ------------------------- */
 /* MEDIA QUERIES */
 /* ------------------------- */
